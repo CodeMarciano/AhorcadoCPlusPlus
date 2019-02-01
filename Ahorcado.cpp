@@ -70,12 +70,10 @@ string obtenerCadenaDeLineaParaMostrar (string &linea){
 
     while (i < tamanioLinea) {
 
-
         lineaParaMostrar += linea[i];
         lineaParaMostrar += ' ';
         i++;
     }
-
 
     return lineaParaMostrar;
 }
@@ -90,22 +88,23 @@ int main() {
     int vidas = 5;
     linea = obtenerCadenaDeLinea((int)palabra.length());
 
-    cout << "Tienes " << vidas << "vida(s)"<< endl;
+    cout << "Tienes " << vidas << " vida(s)\n";
 
     while (noSeTerminoElJuego) {
 
         if (vidas != 0) {
-            string lineaMostrar = obtenerCadenaDeLineaParaMostrar(linea);
-            cout << lineaMostrar << endl;
+            string lineaMostrar = obtenerCadenaDeLineaParaMostrar(linea); //
+            cout << lineaMostrar << "\n";
             string lineaAComparar = obtenerLineaParaComparar(linea);
 
             if (lineaAComparar == palabra) {
-                cout << "Ganaste :)" << endl;
+                cout << "Ganaste :)\n";
                 noSeTerminoElJuego = false;
             } else {
                 cout << "\nDigite una letra: ";
                 cin.get(letra);
                 cin.ignore();
+
             }
         } else {
             noSeTerminoElJuego = false;
@@ -119,16 +118,16 @@ int main() {
 
             } else {
                 vidas--;
+
                 if (vidas == 0) {
-                    cout << "Perdiste :(" << endl;
+                    cout << "Perdiste :(\n";
                 } else {
-                    cout << "\nIncorrecto" << endl;
-                    cout << "Te queda " << vidas << " vida(s)" << endl;
+                    cout << "\nIncorrecto\n";
+                    cout << "Te queda " << vidas << " vida(s)\n";
                 }
 
             }
         }
-
 
     }
 
